@@ -1,0 +1,19 @@
+Swot analysis (maybe)
+Porters Five forces (no)
+Activity diagram (maybe)
+Event tables (no)
+Use case diagram (yes)
+Brief use cases (no)
+Mock-ups (yes)
+Use case prioritization
+Fully dressed use cases (no)
+Candidate class list (yes)
+Domain model (yes)
+System sequence diagram (yes)
+Operation contracts (maybe)
+Interaction diagram (yes)
+Design class diagram (yes)
+Product backlog (yes)
+
+
+
