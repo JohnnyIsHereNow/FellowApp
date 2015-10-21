@@ -1,0 +1,15 @@
+- Vision
+- Architecture
+- Product Backlog
+	- Stories
+	- Estimates
+- Task board
+	- Layout
+- Burndown
+- Roles of your team - and how to handle them
+- Development Environment
+	- Version Control
+	- Build services
+	- Test Framework
+- Stand up meeting agreement
+- Sprint planning meeting and task breakdown
