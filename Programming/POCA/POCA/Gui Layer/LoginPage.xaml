@@ -49,15 +49,15 @@
         <Grid>
             <TextBlock Text="P.O.C.A" TextAlignment="Center" FontSize="40" FontFamily="Courier New" FontStyle="Italic"/>
             <TextBlock Text="USERNAME: " Margin="10,150,330,523" FontSize="22"/>
-            <TextBox Text="username " Margin="150,135,30,500"/>
+            <TextBox Name="txtUsername" Text="username " Margin="150,135,30,500" TextChanged="TextBox_TextChanged"/>
             <TextBlock Text="PASSWORD: " Margin="10,250,330,433" FontSize="22"/>
-            <PasswordBox Password="password" Margin="150,225,30,406"/>
+            <PasswordBox Name="txtPassword" Password="password" Margin="150,225,30,406"/>
             <Button x:Name="loginButton" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Center" Click="login_Click"/>
             <Grid Margin="0,427,0,0">
                 <TextBlock Text="Don't have an account ?" HorizontalAlignment="Left" FontSize="20" Margin="0,27,0,0"/>
 
                 <Button x:Name="signUpButton" Content="Sign up" Margin="288,0,0,211"  Click="signUpButton_Click"/>
-                <Button x:Name="recoverButton" Content="Forget your credentials ?"  IsEnabled="False" HorizontalAlignment="Center" Margin="88,214,88,0"/>
+                <Button x:Name="recoverButton" Content="Forget your credentials ?"  IsEnabled="False" HorizontalAlignment="Center" Margin="88,214,88,0" Click="recoverButton_Click"/>
 
             </Grid>
 

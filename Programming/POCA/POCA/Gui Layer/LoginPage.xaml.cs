@@ -22,14 +22,18 @@ namespace POCA
             //BuildLocalizedApplicationBar();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void login_Click(object sender, RoutedEventArgs e)
         {
-
+            //click here when you want to login
+            if(!txtUsername.Text.Equals("") && !txtPassword.Password.Equals(""))
+            {
+                MessageBox.Show("It works just fine. Go kill yourself now Johnny ! You should do it.");
+                //try to connect to the database, check the info and then change the screen
+            }
+            else
+            {
+                MessageBox.Show("Username or password invalid.");
+            }
         }
 
         private void signUpButton_Click(object sender, RoutedEventArgs e)
@@ -38,6 +42,15 @@ namespace POCA
             this.Content = mynewPage;
         }
 
+        private void recoverButton_Click(object sender, RoutedEventArgs e)
+        {
+            //recover password and/or username
+        }
+
+        private void TextBox_TextChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()
         //{
