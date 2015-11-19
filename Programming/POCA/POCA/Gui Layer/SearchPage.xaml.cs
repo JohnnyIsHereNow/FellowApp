@@ -16,5 +16,23 @@ namespace POCA.Gui_Layer
         {
             InitializeComponent();
         }
+
+        private void SelectPassions_Click(object sender, RoutedEventArgs e)
+        {
+            MainPage mynewPage = new MainPage(); //newPage is the name of the newPage.xaml file
+            this.Content = mynewPage;
+        }
+
+        private void AdvancedSearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShowResults showResults = new ShowResults();
+            this.Content = showResults;
+        }
+
+        private void searchButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShowResults showResults = new ShowResults();
+            this.Content = showResults;
+        }
     }
 }

@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using POCA.Resources;
+using POCA.Gui_Layer;
 
 namespace POCA
 {
@@ -50,6 +51,12 @@ namespace POCA
         private void TextBox_TextChanged(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void testButton_Click(object sender, RoutedEventArgs e)
+        {
+            SearchPage searchPage = new SearchPage();
+            this.Content = searchPage;
         }
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()
