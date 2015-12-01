@@ -8,19 +8,16 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using POCA.Resources;
-using POCA.Control_Layer;
+using POCA.Gui_Layer;
+
 namespace POCA
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        private UserController uc = new UserController();
         // Constructor
         public MainPage()
         {
             InitializeComponent();
-
-            ServiceReference1.RandomNumbersClient cl = new ServiceReference1.RandomNumbersClient();
-            String s = cl.GetNumberAsync();
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
@@ -28,30 +25,18 @@ namespace POCA
 
         private void login_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Trying to connect to database: ");
             //click here when you want to login
-            if (!txtUsername.Text.Equals("") && !txtPassword.Password.Equals(""))
+            if(!txtUsername.Text.Equals("") && !txtPassword.Password.Equals(""))
             {
-                MessageBox.Show(uc.LogInUser(txtUsername.Text, txtPassword.Password).ToString());
-                if (uc.LogInUser(txtUsername.Text, txtPassword.Password))
-                {
-                    RegisterPage mynewPage = new RegisterPage(); //newPage is the name of the newPage.xaml file
-                    this.Content = mynewPage;
-                }
-        //try to connect to the database, check the info and then change the screen
+                MessageBox.Show("It works just fine. Go kill yourself now Johnny ! You should do it.");
+                //try to connect to the database, check the info and then change the screen
             }
             else
             {
                 MessageBox.Show("Username or password invalid.");
             }
         }
-        public void Callback(IAsyncResult r)
-        {
-            System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() => {
-                MessageBox.Show("Asdsad");
-            });
-           
-        }
+
         private void signUpButton_Click(object sender, RoutedEventArgs e)
         {
             RegisterPage mynewPage = new RegisterPage(); //newPage is the name of the newPage.xaml file
@@ -66,6 +51,12 @@ namespace POCA
         private void TextBox_TextChanged(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void testButton_Click(object sender, RoutedEventArgs e)
+        {
+            SearchPage searchPage = new SearchPage();
+            this.Content = searchPage;
         }
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()

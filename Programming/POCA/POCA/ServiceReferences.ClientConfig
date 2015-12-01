@@ -2,16 +2,16 @@
     <system.serviceModel>
         <bindings>
             <basicHttpBinding>
-                <binding name="BasicHttpBinding_IDbConnectionService" maxBufferSize="2147483647"
+                <binding name="BasicHttpBinding_IRandomNumbers" maxBufferSize="2147483647"
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
             </basicHttpBinding>
         </bindings>
         <client>
-            <endpoint address="http://localhost:8733/Design_Time_Addresses/WcfDatabaseConnection/DatabaseConnection/"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IDbConnectionService"
-                contract="DatabaseConnection.IDbConnectionService" name="BasicHttpBinding_IDbConnectionService" />
+            <endpoint address="http://localhost:53911/RandomNumbers.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IRandomNumbers"
+                contract="ServiceReference1.IRandomNumbers" name="BasicHttpBinding_IRandomNumbers" />
         </client>
     </system.serviceModel>
 </configuration>
