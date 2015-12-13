@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IRandomNumbers" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:53911/RandomNumbers.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IRandomNumbers"
+                contract="ServiceReference1.IRandomNumbers" name="BasicHttpBinding_IRandomNumbers" />
+        </client>
+    </system.serviceModel>
+</configuration>
