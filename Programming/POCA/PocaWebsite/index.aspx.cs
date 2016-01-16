@@ -11,9 +11,9 @@ namespace PocaWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ServiceReference1.RandomNumbersClient rc = new ServiceReference1.RandomNumbersClient();
-            string s = rc.GetNumber();
-            txtUsername.Text = s;
+       //    ServiceReference1.RandomNumbersClient rc = new ServiceReference1.RandomNumbersClient();
+       //    string s = rc.GetNumber();
+       //    txtUsername.Text = s;
         }
     }
 }

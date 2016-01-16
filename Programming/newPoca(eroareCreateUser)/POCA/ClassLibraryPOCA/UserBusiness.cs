@@ -9,7 +9,7 @@ namespace ClassLibraryPOCA
     public class UserBusiness
     {
 
-        private const string ConnString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\Work\School\workCopy\POCA\ClassLibraryPOCA\Database.mdf;Integrated Security=True;Connect Timeout=30";
+        private const string ConnString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Alexandru\Documents\FellowAppX\Programming\newPoca(eroareCreateUser)\POCA\ClassLibraryPOCA\Database.mdf;Integrated Security=True;Connect Timeout=30";
         public void RegisterUser(string fn,string ln,string email,string usr,string pass, DateTime bday, string imgURL)
         {
             ConnectionDB c = new ConnectionDB();

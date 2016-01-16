@@ -30,8 +30,8 @@
             </td>
                 </tr>
                 <tr>
-            <td><asp:Label ID="lbLastName" runat="server" Text="Last Name: " style="text-align:center"></asp:Label></td>
-            <td><asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
+            <td><asp:Label ID="lbLastName" runat="server" Text="Last Name: "></asp:Label></td>
+            <td><asp:TextBox ID="txtLastName" runat="server" style="text-align:center"></asp:TextBox>
                 <asp:RequiredFieldValidator 
                 ID="lastFieldValidator"
                 ControlToValidate="txtLastName"
@@ -84,8 +84,8 @@
             <td><asp:TextBox ID="txtRePassword" TextMode="Password" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator 
                 ID="rePassFieldValidator"
-                ControlToValidate ="txtRePassword"
-                ControlToCompare = "txtPassword"
+                ControlToCompare = "txtRePassword"
+                ControlToValidate ="txtPassword"
                 Display="Static"
                 runat="server"
                 ErrorMessage="Passwords do not match">

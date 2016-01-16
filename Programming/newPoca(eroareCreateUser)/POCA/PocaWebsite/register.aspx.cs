@@ -51,7 +51,7 @@ namespace PocaWebsite
             string year = Request.Form.Get("years");
             string bday = string.Format("{0}/{1}/{2}", day, month, year);
             DateTime bdate = DateTime.Parse(bday, new System.Globalization.CultureInfo("fr-FR", true));
-            UserServiceController.IUserService newUsr = new UserServiceController.UserServiceClient();
+            var service = new UserServiceClient();
             if (FileUploadControl.HasFile)
             {
                 try
@@ -79,8 +79,15 @@ namespace PocaWebsite
 
             try
             {
-                InsertUser usr = new InsertUser(txtFirstName, txtLastName, txtEmail, txtUsername, txtPassword, bdate, profileImage.ImageUrl);
-                if (newUsr.RecordUser(usr) != null)
+                var newUser = new InsertUser();
+                newUser.fn = txtFirstName.ToString();
+                newUser.ln = txtLastName.ToString();
+                newUser.email = txtEmail.ToString();
+                newUser.usr = txtUsername.ToString();
+                newUser.pass = txtPassword.ToString();
+                newUser.bday = bdate;
+                newUser.imgURL = profileImage.ImageUrl;
+                if (service.RecordUser(newUser) != null)
                     Response.Write("GOOOD!!!");
             }
             catch (Exception e1)
