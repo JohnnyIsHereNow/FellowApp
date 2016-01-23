@@ -1,0 +1,48 @@
+1-Cover Page
+2-Table of content
+---------------------------------
+I Introduction
+---------------------------------
+3-Introduction
+---------------------------------
+II Idea generalization
+---------------------------------
+4-Idea
+5-Idea generalization
+6-Poca mobile application
+---------------------------------
+III Technology
+---------------------------------
+Wcf
+Vpn and wireless
+Client and server
+Choosen architecture
+Design
+Communication protocols
+Concurrency
+Database transactions
+Network topologies (hosts, networks)
+Setup
+Hosting
+Firewall
+---------------------------------
+IV Programming
+---------------------------------
+ASP.Net Website
+WCF Service
+Premium Package Purchase
+Searching
+Connections
+Messages
+Hosting on Azure
+Implementation
+
+---------------------------------
+V Conclusions
+---------------------------------
+---------------------------------
+VI References
+---------------------------------
+---------------------------------
+VII Appendix
+---------------------------------
