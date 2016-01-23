@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:51103/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:51103/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:51103/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:51103/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WcfService.ModelLayer" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_RegisterUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RegisterUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoginUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoginUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EmailExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmailExists" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EmailExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmailExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UsernameExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:UsernameExists" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UsernameExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UsernameExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllPassions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPassions" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllPassions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPassionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllResults_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllResults" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllResults_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllConnections1_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllConnections1" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllConnections1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllConnections1Response" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllConnections0_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllConnections0" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllConnections0_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllConnections0Response" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUserByUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByUsername" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUserByUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertUserConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserConnection" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertUserConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPassionById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPassionById" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPassionById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPassionByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateConnection" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemoveConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveConnection" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemoveConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegisterUser" message="tns:IService1_RegisterUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RegisterUserResponse" message="tns:IService1_RegisterUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateUser" message="tns:IService1_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateUserResponse" message="tns:IService1_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoginUser" message="tns:IService1_LoginUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoginUserResponse" message="tns:IService1_LoginUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmailExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EmailExists" message="tns:IService1_EmailExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EmailExistsResponse" message="tns:IService1_EmailExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UsernameExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UsernameExists" message="tns:IService1_UsernameExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UsernameExistsResponse" message="tns:IService1_UsernameExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPassions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllPassions" message="tns:IService1_GetAllPassions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllPassionsResponse" message="tns:IService1_GetAllPassions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllResults">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllResults" message="tns:IService1_GetAllResults_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllResultsResponse" message="tns:IService1_GetAllResults_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllConnections1">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllConnections1" message="tns:IService1_GetAllConnections1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllConnections1Response" message="tns:IService1_GetAllConnections1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllConnections0">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllConnections0" message="tns:IService1_GetAllConnections0_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllConnections0Response" message="tns:IService1_GetAllConnections0_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByUsername">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUserByUsername" message="tns:IService1_GetUserByUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUserByUsernameResponse" message="tns:IService1_GetUserByUsername_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertUserConnection" message="tns:IService1_InsertUserConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertUserConnectionResponse" message="tns:IService1_InsertUserConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPassionById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetPassionById" message="tns:IService1_GetPassionById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetPassionByIdResponse" message="tns:IService1_GetPassionById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateConnection" message="tns:IService1_CreateConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateConnectionResponse" message="tns:IService1_CreateConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RemoveConnection" message="tns:IService1_RemoveConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RemoveConnectionResponse" message="tns:IService1_RemoveConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllUsers" message="tns:IService1_GetAllUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllUsersResponse" message="tns:IService1_GetAllUsers_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegisterUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/RegisterUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoginUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmailExists">
+      <soap:operation soapAction="http://tempuri.org/IService1/EmailExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsernameExists">
+      <soap:operation soapAction="http://tempuri.org/IService1/UsernameExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPassions">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllPassions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllResults">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllResults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllConnections1">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllConnections1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllConnections0">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllConnections0" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByUsername">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetUserByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserConnection">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertUserConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPassionById">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetPassionById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateConnection">
+      <soap:operation soapAction="http://tempuri.org/IService1/CreateConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveConnection">
+      <soap:operation soapAction="http://tempuri.org/IService1/RemoveConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:51103/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
