@@ -25,15 +25,15 @@
             <table class="auto-style2"> 
             <tr> 
             <p class="auto-style1">
-            <td><asp:Label ID="lbRealName" runat="server" Text="Real Name: "></asp:Label> 
-            <td><asp:TextBox ID="txtRealName" runat="server"></asp:TextBox>
+            <td><asp:Label ID="lbRealName" runat="server" Text="Real Name: " ></asp:Label> 
+            <td><asp:TextBox ID="txtRealName" runat="server" ReadOnly="true"></asp:TextBox>
             <td>
             </p>
             </tr>
             <tr>
             <p class="auto-style1">        
             <td><asp:Label ID="lbEmail" runat="server" Text="E-mail: "></asp:Label>
-            <td><asp:TextBox ID="txtEmail" runat="server" ReadOnly="true" style="text-align:center"></asp:TextBox>
+            <td><asp:TextBox ID="txtEmail" runat="server" ReadOnly="true" ></asp:TextBox>
                 <td>
                 </p>
             <tr>    
@@ -45,9 +45,6 @@
             <tr>
             <p class="auto-style1">
             <asp:Label ID="lbBirthDate" runat="server" Text="Birthdate: " ></asp:Label>
-            <select id="days" name="days" aria-readonly="true"></select>
-            <select id="months" name="months" aria-readonly="true"></select>
-            <select id="years" name="years" aria-readonly="true"></select>
             </p>
 
         <p class="auto-style1">Passion 1:

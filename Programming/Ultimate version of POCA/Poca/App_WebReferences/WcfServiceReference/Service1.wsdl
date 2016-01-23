@@ -74,6 +74,30 @@
   <wsdl:message name="IService1_InsertUserConnection_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertUserConnectionResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetPassionById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPassionById" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPassionById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPassionByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateConnection" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemoveConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveConnection" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemoveConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="RegisterUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegisterUser" message="tns:IService1_RegisterUser_InputMessage" />
@@ -118,6 +142,22 @@
     <wsdl:operation name="InsertUserConnection">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertUserConnection" message="tns:IService1_InsertUserConnection_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertUserConnectionResponse" message="tns:IService1_InsertUserConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPassionById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetPassionById" message="tns:IService1_GetPassionById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetPassionByIdResponse" message="tns:IService1_GetPassionById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateConnection" message="tns:IService1_CreateConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateConnectionResponse" message="tns:IService1_CreateConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RemoveConnection" message="tns:IService1_RemoveConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RemoveConnectionResponse" message="tns:IService1_RemoveConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllUsers" message="tns:IService1_GetAllUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllUsersResponse" message="tns:IService1_GetAllUsers_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -214,6 +254,42 @@
     </wsdl:operation>
     <wsdl:operation name="InsertUserConnection">
       <soap:operation soapAction="http://tempuri.org/IService1/InsertUserConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPassionById">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetPassionById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateConnection">
+      <soap:operation soapAction="http://tempuri.org/IService1/CreateConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveConnection">
+      <soap:operation soapAction="http://tempuri.org/IService1/RemoveConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllUsers" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

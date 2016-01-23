@@ -29,7 +29,7 @@
             </asp:DropDownList>
             <asp:DropDownList ID="passion3" runat="server">
             </asp:DropDownList>
-            <asp:Button ID="searchButton" runat="server" OnClick="searchButton_Click" Text="Start searching." />
+            <asp:Button  ID="searchButton" runat="server" OnClick="searchButton_Click" Text="Start searching." />
             <asp:Label ID="lblMsg" runat="server"></asp:Label>
              <asp:Panel ID="Advanced_Search" runat="server" style="text-align: center"></asp:Panel>
             <asp:Panel ID="Panel_Controls" runat="server" style="text-align: center"></asp:Panel>

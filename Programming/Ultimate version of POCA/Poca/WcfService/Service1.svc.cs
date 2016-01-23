@@ -297,6 +297,57 @@ namespace WcfService
 
             return users;
         }
+        public List<User> GetAllUsers(string realname)
+        {
+            List<int> results = new List<int>();
+            string command = string.Format("Select id from Users ");
+            cmd.CommandText = command;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = sqlConnection1;
+
+            sqlConnection1.Open();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    results.Add(Int32.Parse(reader.GetValue(0).ToString()));
+                }
+            }
+
+            List<User> users = new List<User>();
+
+            int[] S = results.Distinct().ToArray();
+            sqlConnection1.Close();
+            foreach (int i in S)
+            {
+                command = string.Format("Select Id, Username, Email, Name, Passion1, Passion2, Passion3 , BirthDate from Users where Id = '" + i + "'");
+                cmd.CommandText = command;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = sqlConnection1;
+                sqlConnection1.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (!reader.GetValue(1).ToString().Equals(realname))
+                        {
+                            User user = new User();
+                            user.Id = Int32.Parse(reader.GetValue(0).ToString());
+                            user.Username = reader.GetValue(1).ToString();
+                            user.Email = reader.GetValue(2).ToString();
+                            user.Name = reader.GetValue(3).ToString();
+                            user.Passion1 = Int32.Parse(reader.GetValue(4).ToString());
+                            user.Passion2 = Int32.Parse(reader.GetValue(5).ToString());
+                            user.Passion3 = Int32.Parse(reader.GetValue(6).ToString());
+                            user.Bday = DateTime.Parse(reader.GetValue(7).ToString(), new System.Globalization.CultureInfo("fr-FR", true));
+                            users.Add(user);
+                        }
+                    }
+                }
+                sqlConnection1.Close();
+            }
+            return users;
+        }
 
         public List<User> GetAllConnections1(User myUser)
         {
@@ -414,7 +465,7 @@ namespace WcfService
             }
             return users;
         }
-    public List<User> GetAllConnections0(User myUser)
+        public List<User> GetAllConnections0(User myUser)
         {
             //Edit this
             List<int> results = new List<int>();
@@ -530,5 +581,55 @@ namespace WcfService
             }
             return users;
         }
+        public string GetPassionById(int id)
+        {
+            string passion = "";
+            string command = string.Format("Select Passion from Passions Where Id = " + id);
+            cmd.CommandText = command;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = sqlConnection1;
+
+            sqlConnection1.Open();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    passion=reader.GetValue(0).ToString();
+                }
+            }
+            sqlConnection1.Close();
+            return passion;
+        }
+        public void CreateConnection(int t, int Id)
+        {
+            string command = string.Format("Update Connections SET Accepted=1 WHERE SenderId=" + t + " AND " + "ReceiverId=" + Id);
+
+            cmd.CommandText = command;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = sqlConnection1;
+
+            sqlConnection1.Open();
+            cmd.ExecuteNonQuery();
+            sqlConnection1.Close();
+        }
+        public void RemoveConnection(int t, int Id)
+        {
+            string command = string.Format("Delete FROM Connections WHERE SenderId=" + t + " AND " + "ReceiverId=" + Id);
+            cmd.CommandText = command;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = sqlConnection1;
+
+            sqlConnection1.Open();
+            cmd.ExecuteNonQuery();
+
+            command = string.Format("Delete FROM Connections WHERE SenderId=" + Id + " AND " + "ReceiverId=" + t);
+            cmd.CommandText = command;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = sqlConnection1;
+
+            cmd.ExecuteNonQuery();
+            sqlConnection1.Close();
+        }
+
     }
 }

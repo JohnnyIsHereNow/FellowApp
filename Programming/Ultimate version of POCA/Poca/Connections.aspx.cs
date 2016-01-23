@@ -5,18 +5,21 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WcfService.ModelLayer;
+using System.Data;
+using System.Data.SqlClient;
+using WcfService;
 
 public partial class Connections : System.Web.UI.Page
 {
+    public HttpCookie theCookie;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Request.Cookies["userName"] != null)
         {
-            if (!IsPostBack)
-            {
+
                 WcfServiceReference.Service1Client service = new WcfServiceReference.Service1Client();
                 User currUser = service.GetUserByUsername(Request.Cookies["userName"].Value);
-                //Find where acceptance =0
+                //Finds where acceptance =0
                 User[] results0 = service.GetAllConnections0(currUser);
                 foreach (User r in results0)
                 {
@@ -58,10 +61,12 @@ public partial class Connections : System.Web.UI.Page
 
                     //more info
                     Button newButton2 = new Button();
-                    newButton2.ID = "" + r.Username;
+                    newButton2.ID = "a" + r.Username;
                     newButton2.Width = 580;
                     newButton2.Height = 30;
                     newButton2.Text = "Click me for more information about this person.";
+                    newButton2.Click += new EventHandler(aboutButton2_Click); 
+                    //pass the username through lamda for recognize the profile in the database;
                     panel.Controls.Add(newButton2);
 
                     Button newButton3 = new Button();
@@ -69,18 +74,12 @@ public partial class Connections : System.Web.UI.Page
                     newButton3.Width = 580;
                     newButton3.Height = 30;
                     newButton3.Text = "Accept request!";
+                    newButton3.Click += new EventHandler(aboutButton3_Click);
+                    //pass a variable through lambda for the accept id!
                     panel.Controls.Add(newButton3);
 
-
                     Panel_Controls.Controls.Add(panel);
-                    Panel_Controls.Controls.Add(panel);
-                    /*
-                    Button newButton = new Button();
-                    newButton.ID = ""+i;
-                    newButton.Text = "Johnny";
-                    newButton.Width = 600;
-                    newButton.Height = 100;
-                    Panel_Controls.Controls.Add(newButton);*/
+                    //Panel_Controls.Controls.Add(panel);
 
                 }
 
@@ -126,34 +125,40 @@ public partial class Connections : System.Web.UI.Page
 
                     //more info
                     Button newButton2 = new Button();
-                    newButton2.ID = "" + r.Username;
+                    newButton2.ID = "b" + r.Username;
                     newButton2.Width = 580;
                     newButton2.Height = 30;
 
                     newButton2.Text = "Click me for more information about this person.";
+                    newButton2.Click += new EventHandler(aboutButton2_Click);
+                    //pass the username through lamda for recognize the profile in the database; 
                     panel.Controls.Add(newButton2);
 
 
                     Panel_Controls.Controls.Add(panel);
-                    /*
-                    Button newButton = new Button();
-                    newButton.ID = ""+i;
-                    newButton.Text = "Johnny";
-                    newButton.Width = 600;
-                    newButton.Height = 100;
-                    Panel_Controls.Controls.Add(newButton);*/
                     
                 }
                 
-            }
-            else
-            {
-                Response.Write("No service connection");
-            }
         }
         else
         {
             Response.Redirect("Login.aspx");
         }
+    }
+    protected void aboutButton3_Click(object sender, EventArgs e)
+    {
+        WcfServiceReference.Service1Client sr = new WcfServiceReference.Service1Client();
+        User user = sr.GetUserByUsername(Request.Cookies["Username"].Value);
+        string r = ((Button)sender).ID;
+        int t = sr.GetUserByUsername(r).Id;
+        sr.CreateConnection(t, user.Id);
+        Response.Redirect("ProfileOfOthers.aspx");
+    }
+    protected void aboutButton2_Click(object sender, EventArgs e)
+    {
+        string id = ((Button)sender).ID;
+        id = id.Substring(1, ((Button)sender).ID.Length - 1);
+        Session["id"] = id;
+        Response.Redirect("ProfileOfOthers.aspx");
     }
 }
