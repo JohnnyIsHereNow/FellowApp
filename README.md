@@ -5,7 +5,7 @@ This is a version of Poca for windows.
 You can find all the files inside this git.
 Some modifications will need to be made in order to connect the WCF Service to the website if you want to publish it yourself.
 Authors:
-Ionut Danci-Bumbea
-Ilea Alexandru
-Richard Retezi
-Leonard Hirja
+Ionut Danci-Bumbea,
+Ilea Alexandru,
+Richard Retezi,
+Leonard Hirja.
